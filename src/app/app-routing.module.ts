@@ -14,11 +14,6 @@ const routes: Routes = [
     component: EmployeeComponent,
     pathMatch:'full',
   },
-  {
-    path:'employee-list/:id',
-    component: EmployeeDetailComponent,
-    pathMatch:'full',
-  },
 ];
 
 @NgModule({
