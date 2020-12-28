@@ -1,0 +1,49 @@
+.main-wrapper {
+    .user-input {
+        font-size: 14px;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+      .common-margin {
+        margin-left: 10px;
+      }
+      .icon-common-spacing {
+        padding-left: 40px;
+      }
+      .trash-image {
+        height: 25px;
+        width: 30px;
+      }
+      .reset-data {
+          font-size: 30px;
+          color: red;
+          cursor: pointer;        
+      }
+      .employee-table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+        th,td {
+            text-align: left;
+            padding: 12px;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+            .header, :hover {
+                background-color: #f1f1f1;
+                th {
+                    width: 30%;
+                }
+            }
+
+        }
+        .sort-data {
+            cursor: pointer;
+        }
+        .blank_row {
+            text-align: center;
+        }
+    }
+}

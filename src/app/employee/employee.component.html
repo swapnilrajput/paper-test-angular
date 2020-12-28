@@ -1,1 +1,42 @@
-<p>employee works!</p>
+<div class="main-wrapper">
+    <div class="header-data">
+        <input type="text" class="user-input" (keyup)="searchByName($event?.target?.value)" placeholder="Search by name">
+        <select name="yearOfExperieice" class="user-input common-margin" #selectedValue (change)='yearOfexperience(selectedValue?.value)'>
+            <option value="2" selected disabled>Experience</option>
+            <option value="2">More than 2 years</option>
+            <option value="8">More than 8 years</option>
+            <option value="all">All Employees</option>
+        </select>
+        <span class="icon-common-spacing">
+            <b>Department Section : </b>
+            <ng-container *ngFor="let key of iterateDepartmentKeys">
+                {{key}} - {{uniqueDepartments[key]}},
+            </ng-container>
+        </span>
+        <span (click)="removeAllCandidateFromDevelopmentDepartment()" class="reset-data icon-common-spacing"><img class="trash-image" src="../../assets/trash.png"></span>
+        <span (click)="resetData()" class="reset-data icon-common-spacing">&#x21bb;</span>
+    </div>
+    <table class="employee-table">
+        <tr class="header">
+            <th>Name
+                <span class="sort-data" (click)="sortByName()">&#8593;</span>
+            </th>
+            <th>Department</th>
+            <th>Joining Date
+                <span class="sort-data" (click)="sortByDate()">&#8593;</span>
+            </th>
+        </tr>
+        <ng-container *ngIf="candidate_data?.length;else noDataFound">
+            <tr *ngFor="let candidate of candidate_data">
+                <td>{{candidate?.name}}</td>
+                <td>{{candidate?.department}}</td>
+                <td>{{candidate?.joining_date}}</td>
+            </tr>
+        </ng-container>
+        <ng-template #noDataFound>
+            <tr>
+                <td colspan="3" class="blank_row">No Data Found</td>
+            </tr>
+        </ng-template>
+    </table>
+</div>
