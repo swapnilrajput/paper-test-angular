@@ -25,14 +25,12 @@
             <th>Joining Date
                 <span class="sort-data" (click)="sortByDate()">&#8593;</span>
             </th>
-            <th>Action</th>
         </tr>
         <ng-container *ngIf="candidate_data?.length;else noDataFound">
             <tr *ngFor="let candidate of candidate_data">
                 <td>{{candidate?.name}}</td>
                 <td>{{candidate?.department}}</td>
                 <td>{{candidate?.joining_date}}</td>
-                <td class="view-data" (click)="candidateDetailPage(candidate)">View</td>
             </tr>
         </ng-container>
         <ng-template #noDataFound>

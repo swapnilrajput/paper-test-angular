@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -19,10 +18,7 @@ export class EmployeeComponent implements OnInit {
   { "id": 19, "name": "Ola", "department": "HR", "joining_date": '7 / 5 / 2011' },
   { "id": 20, "name": "Kim", "department": "Finance", "joining_date": '20 / 10 / 2010' }];
   originalCandidateData = JSON.parse(JSON.stringify(this.candidate_data));
-  constructor(
-    private route: ActivatedRoute,
-    private router:Router,
-  ) { }
+  constructor() { }
 
   get iterateDepartmentKeys() {
     return Object.keys(this.uniqueDepartments);
@@ -99,10 +95,6 @@ export class EmployeeComponent implements OnInit {
     if (result) {
       this.candidate_data = this.originalCandidateData;
     }
-  }
-
-  candidateDetailPage(candidate) {
-    this.router.navigateByUrl(`/employee-list/${candidate.id}`)
   }
 
   ngOnInit() {
